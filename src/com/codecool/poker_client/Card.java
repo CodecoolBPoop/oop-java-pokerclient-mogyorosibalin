@@ -1,3 +1,5 @@
+package com.codecool.poker_client;
+
 import java.util.*;
 
 public class Card {
