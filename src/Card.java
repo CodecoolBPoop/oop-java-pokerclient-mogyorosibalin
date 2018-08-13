@@ -4,6 +4,22 @@ public class Card {
 
     String cardCode;
 
+    private static final HashMap<String, Integer> alphabeticCardValue = new HashMap<>() {{
+        put("2", 2);
+        put("3", 3);
+        put("4", 4);
+        put("5", 5);
+        put("6", 6);
+        put("7", 7);
+        put("8", 8);
+        put("9", 9);
+        put("10", 10);
+        put("j", 11);
+        put("q", 12);
+        put("k", 13);
+        put("a", 14);
+    }};
+
     public Card(String cardCode) throws IllegalArgumentException {
         this.cardCode = cardCode;
 
@@ -20,12 +36,6 @@ public class Card {
         String cardValue = cardCode.substring(1).toUpperCase();
         Integer intCardValue;
 
-        HashMap<String, Integer> alphabeticCardValue = new HashMap<>();
-        alphabeticCardValue.put("J", 11);
-        alphabeticCardValue.put("Q", 12);
-        alphabeticCardValue.put("K", 13);
-        alphabeticCardValue.put("A", 14);
-
         if (alphabeticCardValue.get(cardCode.substring(1).toUpperCase()) == null) {
             // raises exception if cardValue is a letter, but not J/Q/K/A
             intCardValue = Integer.parseInt(cardValue);
@@ -40,12 +50,6 @@ public class Card {
     }
 
     public int getValue() {
-        HashMap<String, Integer> alphabeticCardValue = new HashMap<>();
-        alphabeticCardValue.put("J", 11);
-        alphabeticCardValue.put("Q", 12);
-        alphabeticCardValue.put("K", 13);
-        alphabeticCardValue.put("A", 14);
-
         String cardValue = cardCode.substring(1).toUpperCase();
         Integer intCardValue;
 
